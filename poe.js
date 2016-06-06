@@ -1,27 +1,32 @@
-var leagueName = "Standard";
-
-var effects = [];
-var numTabs = 0;
-var accountString = $('.profile-link:first').find("a:first").html();
-if (accountString === undefined)
-    alert("Please login to continue using MTX Finder");
-var accountName = "";
-if (accountString.indexOf(">") >= 0)
-    accountName = accountString.substring(accountString.indexOf(">") + 1);
-else
-    accountName = accountString;
-console.log("Account Name: " + accountName);
-var characters = [];
-var charEffects = [];
-var leagues = ["Standard", "Hardcore", "Prophecy", "Hardcore Prophecy"];
-var charBool = false;
-var skinBool = false;
-
 function log(msg, nobr) {
-    $modal.append(msg + (nobr ? "" : "<br>"));
+    $("#modal").append(msg + (nobr ? "" : "<br>"));
 }
+function MTX_Finder(AccountName) {
+    this.accountName = AccountName;
+    this.leagueName = "Standard";
+    this.effects = [];
+    this.numTabs = 0;
+    this.characters = [];
+    this.charEffects = [];
+    this.leagues = ["Standard", "Hardcore", "Prophecy", "Hardcore Prophecy"];
+    this.charBool = false;
+    this.skinBool = false;
+    this.checkLoading = function() {
+        console.log("here");
+    };
+};
 
 $( document ).ready(function() {
+    var accountString = $('.profile-link:first').find("a:first").html();
+    if (accountString === undefined)
+        alert("Please login to continue using MTX Finder");
+    var accountName = "";
+    if (accountString.indexOf(">") >= 0)
+        accountName = accountString.substring(accountString.indexOf(">") + 1);
+    else
+        accountName = accountString;
+    var mtx_finder = new MTX_Finder(accountName);
+    
     //display league selection
     $(document.body).append("<div style=\"z-index: 10000; background: black; color: white; border: 2px solid white; padding: 10px; width: 50%; height: 50%; position: absolute; left: 25%; top: 25%; overflow-y: auto; line-height: 25px;\" id=\"modal\">Please select your league.<br><div class=\"_leagues\"></div><input type='checkbox' id=\"charOnly\"/>Characters Only<input type='checkbox' id='skinRemove' />Don't show skin xfers<br><a class='allChars' href='#'>Search characters in every league</a><br></div>");
     $modal = $("#modal");
