@@ -26,7 +26,7 @@ $( document ).ready(function() {
     else
         accountName = accountString;
     var mtx_finder = new MTX_Finder(accountName);
-    
+    mtx_finder.checkLoading();
     //display league selection
     $(document.body).append("<div style=\"z-index: 10000; background: black; color: white; border: 2px solid white; padding: 10px; width: 50%; height: 50%; position: absolute; left: 25%; top: 25%; overflow-y: auto; line-height: 25px;\" id=\"modal\">Please select your league.<br><div class=\"_leagues\"></div><input type='checkbox' id=\"charOnly\"/>Characters Only<input type='checkbox' id='skinRemove' />Don't show skin xfers<br><a class='allChars' href='#'>Search characters in every league</a><br></div>");
     $modal = $("#modal");
