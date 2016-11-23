@@ -6,7 +6,7 @@ function MTX_Finder(AccountName) {
     _this.numTabs = 0;
     _this.characters = [];
     _this.charEffects = [];
-    _this.leagues = ["Standard", "Hardcore", "Prophecy", "Hardcore Prophecy"];
+    _this.leagues = ["Standard", "Hardcore", "Essence", "Hardcore Essence"];
     _this.charBool = false;
     _this.skinBool = false;
     _this.modal = $("#mtx_finder_container");
@@ -297,7 +297,7 @@ function MTX_Finder(AccountName) {
 }
 
 //initialization stuff  
-var accountString = $('.profile-link:first').find("a:first").html();
+var accountString = $('#statusBar .profile-link:first').find("a:first").html();
 if (accountString === undefined)
     alert("Please login to continue using MTX Finder");
 var accountName = "";
