@@ -6,7 +6,7 @@ function MTX_Finder(AccountName) {
     _this.numTabs = 0;
     _this.characters = [];
     _this.charEffects = [];
-    _this.leagues = ["Standard", "Hardcore", "Breach", "Hardcore Breach"];
+    _this.leagues = ["Standard", "SSF Standard", "Hardcore", "SSF Hardcore", "Legacy", "SSF Legacy", "Hardcore Legacy", "SSF Hardcore Legacy"];
     _this.charBool = false;
     _this.skinBool = false;
     _this.modal = $("#mtx_finder_container");
